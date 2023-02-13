@@ -39,7 +39,7 @@ class MysqlVarsSpider(scrapy.Spider):
                 else:
                     data[k] = t.xpath(data_xpath[k]).get()
             desc = [
-                line.strip().replace("\n        ", " ") for line in
+                line.strip().replace("\n        ", "") for line in
                 get_describe_xpath(t,data["name"]).getall() if line.strip() != data["name"]
             ]
             desc_str = ""
